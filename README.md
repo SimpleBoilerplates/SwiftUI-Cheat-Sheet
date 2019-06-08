@@ -1,6 +1,9 @@
-#[SwiftUI](https://developer.apple.com/xcode/swiftui/) Cheat Sheet
+#SwiftUI Cheat Sheet
 
-###Table of Contents
+![SwiftUI](https://raw.githubusercontent.com/SimpleBoilerplates/SwiftUI-Cheat-Sheet/master/assets/image.png)
+
+
+### Table of Contents
 - [UIKIT equivalent in SwiftUI](#uikit-equivalent-in-swiftui)
 - [Tutorial](#tutorial)
 - [View](#view)
