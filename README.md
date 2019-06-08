@@ -59,7 +59,9 @@
 | NSAttributedString | No equivalent (use [Text](#text)) |
 
 # Tutorial
-- [SwiftUI Essentials (Official)](https://developer.apple.com/tutorials/swiftui/creating-and-combining-views)
+- [SwiftUI Tutorials (Official)](https://developer.apple.com/tutorials/swiftui/creating-and-combining-views)
+- [Introducing SwiftUI: Building Your First App (Official)](https://developer.apple.com/videos/play/wwdc2019/204/)
+- [SwiftUI Essentials (Official)](https://developer.apple.com/videos/play/wwdc2019/216)
 - [SwiftUI - How to setup a project](https://medium.com/@martinlasek/swiftui-getting-started-372389fff423)
 
 # View
