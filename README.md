@@ -1,6 +1,6 @@
-# SwiftUI Cheat Sheet
+#[SwiftUI](https://developer.apple.com/xcode/swiftui/) Cheat Sheet
 
-- [SwiftUI Cheat Sheet](#swiftui-cheat-sheet)
+###Table of Contents
 - [UIKIT equivalent in SwiftUI](#uikit-equivalent-in-swiftui)
 - [Tutorial](#tutorial)
 - [View](#view)
@@ -10,8 +10,8 @@
 - [Layout](#layout)
     - [Background](#background)
     - [VStack](#vstack)
-  - [HStack](#hstack)
-  - [ZStack](#zstack)
+    - [HStack](#hstack)
+    - [ZStack](#zstack)
 - [Input](#input)
     - [Toggle](#toggle)
     - [Button](#button)
@@ -32,17 +32,17 @@
     - [Use UIKit and SwiftUI Views Together](#use-uikit-and-swiftui-views-together)
 
 # UIKIT equivalent in SwiftUI
-| UIKIT | SwiftUI |
+| UIKIT | [SwiftUI](https://developer.apple.com/xcode/swiftui/) |
 | ----------- | ----------- |
 | UILabel | [Text](#text) |
 | UIImageView | [Image](#image) |
 | UITextField | [TextField](#textfield) |
-| UITextView | No equivalent |
+| UITextView | No equivalent (use [Text](#text)) |
 | UISwitch | [Toggle](#toggle) |
 | UISlider | [Slider](#slider) |
 | UIButton | [Button](#button) |
 | UITableView | [List](#list) |
-| UICollectionView | No equivalent (can be implemented by List) |
+| UICollectionView | No equivalent (can be implemented by [List](#list)) |
 | UINavigationController | [NavigationView](#navigationview) |
 | UIAlertController with style .alert | [Alert](#alerts-and-action-sheets) |
 | UIAlertController with style .actionSheet | [ActionSheet](#alerts-and-action-sheets) |
@@ -51,7 +51,7 @@
 | UISegmentedControl | [SegmentedControl](#segmented-control) |
 | UIStepper | Stepper |
 | UIDatePicker | [DatePicker](#date-picker) |
-| NSAttributedString | No equivalent |
+| NSAttributedString | No equivalent (use [Text](#text)) |
 
 # Tutorial
 - [SwiftUI Essentials (Official)](https://developer.apple.com/tutorials/swiftui/creating-and-combining-views)
@@ -94,7 +94,7 @@ static let dateFormatter: DateFormatter = {
 ### Image
  To show image
 ~~~~
-Image("hello_world")
+Image("hello_world") //image name is hello_world
 ~~~~
 
 To use system icon
@@ -169,7 +169,7 @@ VStack (alignment: .leading, spacing: 20){
 }
 ```
 
-## HStack
+### HStack
 Shows child view horizontally
 ```
 HStack {
@@ -179,7 +179,7 @@ HStack {
 ```
 
 
-## ZStack
+### ZStack
 
 To create overlapping content use ZStack
 ```
