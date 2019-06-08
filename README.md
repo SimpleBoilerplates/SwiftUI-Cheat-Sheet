@@ -47,10 +47,10 @@
 | UIAlertController with style .alert | [Alert](#alerts-and-action-sheets) |
 | UIAlertController with style .actionSheet | [ActionSheet](#alerts-and-action-sheets) |
 | UIStackView with horizontal axis| [HStack](#hstack) |
-| UIStackView with vertical axis| VStack |
-| UISegmentedControl | SegmentedControl |
+| UIStackView with vertical axis| [VStack](#vstack) |
+| UISegmentedControl | [SegmentedControl](#segmented-control) |
 | UIStepper | Stepper |
-| UIDatePicker | DatePicker |
+| UIDatePicker | [DatePicker](#date-picker) |
 | NSAttributedString | No equivalent |
 
 # Tutorial
