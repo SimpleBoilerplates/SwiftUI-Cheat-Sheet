@@ -95,7 +95,7 @@ static let dateFormatter: DateFormatter = {
     var now = Date()
 
     var body: some View {
-        Text("Task due date: \(now, formatter: Self.formatter)")
+        Text("Task due date: \(now, formatter: Self.dateFormatter)")
     }
 ~~~~
 
