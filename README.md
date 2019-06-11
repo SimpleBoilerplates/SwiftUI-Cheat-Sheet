@@ -308,7 +308,7 @@ Text("Tap")
             }
         )
 
-Text("Long Press")
+Text("Drag Me")
     .gesture(
         DragGesture(minimumDistance: 50)
             .onEnded { _ in
@@ -316,7 +316,7 @@ Text("Long Press")
             }
         )
 
-Text("Drag Me")
+Text("Long Press")
    .gesture(
         LongPressGesture(minimumDuration: 2)
             .onEnded { _ in
