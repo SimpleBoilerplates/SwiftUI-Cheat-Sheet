@@ -6,7 +6,7 @@
 ### Table of Contents
 - [SwiftUI Cheat Sheet](#swiftui-cheat-sheet)
     - [Table of Contents](#table-of-contents)
-- [Tutorial](#tutorial)
+- [Resource](#resource)
 - [UIKIT equivalent in SwiftUI](#uikit-equivalent-in-swiftui)
 - [View](#view)
     - [Text](#text)
@@ -36,12 +36,13 @@
     - [Navigate to ViewController](#navigate-to-viewcontroller)
     - [Use UIKit and SwiftUI Views Together](#use-uikit-and-swiftui-views-together)
 
-# Tutorial
+# Resource
 - [SwiftUI Tutorials (Official)](https://developer.apple.com/tutorials/swiftui/creating-and-combining-views)
 - [Introducing SwiftUI: Building Your First App (Official)](https://developer.apple.com/videos/play/wwdc2019/204/)
 - [SwiftUI: Getting Started Raywenderlich](https://www.raywenderlich.com/3715234-swiftui-getting-started)
 - [SwiftUI Essentials (Official)](https://developer.apple.com/videos/play/wwdc2019/216)
 - [SwiftUI - How to setup a project](https://medium.com/@martinlasek/swiftui-getting-started-372389fff423)
+- [About SwiftUI](https://github.com/Juanpe/About-SwiftUI3)
 
 
 # UIKIT equivalent in SwiftUI
