@@ -42,7 +42,7 @@
 - [SwiftUI: Getting Started Raywenderlich](https://www.raywenderlich.com/3715234-swiftui-getting-started)
 - [SwiftUI Essentials (Official)](https://developer.apple.com/videos/play/wwdc2019/216)
 - [SwiftUI - How to setup a project](https://medium.com/@martinlasek/swiftui-getting-started-372389fff423)
-- [About SwiftUI](https://github.com/Juanpe/About-SwiftUI3)
+- [About SwiftUI](https://github.com/Juanpe/About-SwiftUI)
 
 
 # UIKIT equivalent in SwiftUI
