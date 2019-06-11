@@ -70,72 +70,71 @@
 ### Text
 
 To show a **text** in UI simply write
-~~~~
+``` swift
 Text("Hello World")
-~~~~
+```
 
 To add style
-~~~~
+``` swift
 Text("Hello World")
     .font(.largeTitle)
     .foregroundColor(Color.green)
     .lineSpacing(50)
     .lineLimit(nil)
     .padding()
-~~~~
+```
 
 To format text inside text view
-~~~~
+``` swift
 static let dateFormatter: DateFormatter = {
     let formatter = DateFormatter()
     formatter.dateStyle = .long
     return formatter
-    }()
+}()
 
-    var now = Date()
-
-    var body: some View {
-        Text("Task due date: \(now, formatter: Self.dateFormatter)")
-    }
-~~~~
+var now = Date()
+var body: some View {
+    Text("Task due date: \(now, formatter: Self.dateFormatter)")
+}
+```
 
 ### Image
  To show image
-~~~~
+``` swift
 Image("hello_world") //image name is hello_world
-~~~~
+```
 
 To use system icon
-~~~~
+``` swift
 Image(systemName: "cloud.heavyrain.fill")
-~~~~
+```
 
 you can add style to system icon set
-~~~~
+``` swift
 Image(systemName: "cloud.heavyrain.fill")
     .foregroundColor(.red)
     .font(.largeTitle)
-~~~~
+```
 
 Add style to Image
-~~~~
+``` swift
 Image("hello_world")
     .resizable() //it will sized so that it fills all the available space
     .aspectRatio(contentMode: .fill)
     .padding(.bottom)
-~~~~
+```
 
 ### Shape
 
 To create Rectangle
-```
+``` swift
 Rectangle()
     .fill(Color.red)
     .frame(width: 200, height: 200)
-````
+```
 
 To create circle
-```
+``` swift
 Circle()
     .fill(Color.blue)
     .frame(width: 50, height: 50)
@@ -145,7 +144,7 @@ Circle()
 
 ### Background
 To use image as a background
-```
+``` swift
 Text("Hello World")
     .font(.largeTitle)
     .background(
@@ -155,21 +154,21 @@ Text("Hello World")
 ```
 
 Gradient background
-```
+``` swift
 Text("Hello World")
     .background(LinearGradient(gradient: Gradient(colors: [.white, .red, .black]), startPoint: .leading, endPoint: .trailing), cornerRadius: 0)
 ```
 
 ### VStack
 Shows child view vertically
-```
+``` swift
 VStack {
     Text("Hello")
     Text("World")
 }
 ```
 Styling
-```
+``` swift
 VStack (alignment: .leading, spacing: 20){
     Text("Hello")
     Divider()
@@ -179,7 +178,7 @@ VStack (alignment: .leading, spacing: 20){
 
 ### HStack
 Shows child view horizontally
-```
+``` swift
 HStack {
     Text("Hello")
     Text("World")
@@ -190,7 +189,7 @@ HStack {
 ### ZStack
 
 To create overlapping content use ZStack
-```
+``` swift
 ZStack() {
     Image("hello_world")
     Text("Hello World")
@@ -205,17 +204,17 @@ ZStack() {
 ### Toggle
 
 Toggle lets users move between true and false states
-```
-    @State var isShowing = true //state
+``` swift
+@State var isShowing = true //state
 
-    Toggle(isOn: $isShowing) {
-        Text("Hello World")
-    }.padding()
+Toggle(isOn: $isShowing) {
+    Text("Hello World")
+}.padding()
 ```
 
 ### Button
 To create button
-```
+``` swift
 Button(action: {
     // do something
 }) {
@@ -223,7 +222,7 @@ Button(action: {
 }
 ```
 To create image Button
-```
+``` swift
 Button(action: {
     // do something
 }) {
@@ -234,7 +233,7 @@ Button(action: {
 ### TextField
 
 It heavily relies in state, simply create a state and pass it as it will bind to it
-```
+``` swift
 @State var fullName: String = "Joe" //create State
 
 TextField($fullName) // passing it to bind
@@ -243,7 +242,7 @@ TextField($fullName) // passing it to bind
 ```
 
 To create secure TextField
-```
+``` swift
 @State var password: String = "" //create State
 
 SecureField($password) // passing it to bind
@@ -253,25 +252,25 @@ SecureField($password) // passing it to bind
 
 ### Slider
 
-```
+``` swift
 @State var value: Double = 0 //create State
     
 Slider(value: $value, from: -100, through: 100, by: 1)
 ```
 
 ### Date Picker
-```
+``` swift
 @State var selectedDate = Date()
 DatePicker(
-            $selectedDate,
-            maximumDate: Date(),
-            displayedComponents: .date
-        )
+    $selectedDate,
+    maximumDate: Date(),
+    displayedComponents: .date
+)
 ```
 
 ### Segmented Control
 
-```
+``` swift
 @State var favoriteColor = 0
 var colors = ["Red", "Green", "Blue"]
 
@@ -284,23 +283,23 @@ SegmentedControl(selection: $favoriteColor) {
 
 ### Tap
 For single tap
-```
+``` swift
 Text("Tap me!")
     .tapAction {
        print("Tapped!")
 }
 ```
 For double tap
-```
+``` swift
 Text("Tap me!")
-    .tapAction (count: 2){
+    .tapAction (count: 2) {
        print("Tapped!")
 }
 ```
 
 ### Gesture
  Gesture like **TapGesture**, **LongPressGesture**, **DragGesture**
- ```
+``` swift
 Text("Tap")
     .gesture(
         TapGesture()
@@ -324,13 +323,13 @@ Text("Drag Me")
                         
             }
         )
- ```
+```
 
 # List
 
 To create static scrollable **List**
 
-```
+``` swift
 List {
     Text("Hello world")
     Text("Hello world")
@@ -339,16 +338,16 @@ List {
 ```
 
 To create dynamic **List**
-```
+``` swift
 let names = ["Thanos", "Iron man", "Ant man"]
 List(names) { name in
         Text(name)
-    }
+}
 ```
 
 To add section
-```
- List {
+``` swift
+List {
     Section(header: Text("Good Hero")) {
         Text("Thanos")
     }
@@ -360,8 +359,8 @@ To add section
 ```
 
 To make it grouped add *.listStyle(.grouped)*
-```
- List {
+``` swift
+List {
     Section(header: Text("Good Hero")) {
         Text("Thanos")
     }
@@ -378,7 +377,7 @@ To make it grouped add *.listStyle(.grouped)*
 
 **NavigationView** is more/less like **UINavigationController**, It handles navigation between views, shows title, places navigation bar on top. 
 
-```
+``` swift
 NavigationView {
     Text("Hello")
         .navigationBarTitle(Text("World"), displayMode: .inline)
@@ -388,7 +387,7 @@ NavigationView {
 For large title use *.large*
 
 Add bar items to **NavigationView**
-```
+``` swift
 NavigationView {
     Text("Hello")
         .navigationBarTitle(Text("World"), displayMode: .inline)
@@ -403,36 +402,36 @@ NavigationView {
 
 ### Group
 Group creates several views to act as one, also to avoid Stack's 10 View maximum limit.
-```
- VStack {
-        Group {
-            Text("Hello")
-            Text("Hello")
-            Text("Hello")
-        }
-        Group {
-            Text("Hello")
-            Text("Hello")
-        }
+``` swift
+VStack {
+    Group {
+        Text("Hello")
+        Text("Hello")
+        Text("Hello")
     }
+    Group {
+        Text("Hello")
+        Text("Hello")
+    }
+}
 ```
 
 # Alerts and Action Sheets
 To Show an Alert
-```
+``` swift
 Alert(title: Text("Title"), message: Text("message"), dismissButton: .default(Text("Ok!")))
 
 ```
 To Show Action Sheet
-```
+``` swift
 ActionSheet(title: Text("Title"), message: Text("Message"), buttons: [.default(Text("Ok!"), onTrigger: {
-
-    })])
+    print("hello")
+})])
 ```
 
 # Navigation
 Navigate via **NavigationButton**
-```
+``` swift
 NavigationView {
     NavigationButton(destination: SecondView()) {
         Text("Show")
@@ -441,7 +440,7 @@ NavigationView {
 ```
 
 Navigate via tap on List Item
-```
+``` swift
 let names = ["Thanos", "Iron man", "Ant man"]
 List(names) { name in
     NavigationButton(destination: HeroView(name: name)) {
@@ -452,7 +451,7 @@ List(names) { name in
 
 Navigate via **PresentationButton**
 
-```
+``` swift
 PresentationButton(Text("Tap"), destination: HeroView())
 ```
 
@@ -464,7 +463,7 @@ PresentationButton(Text("Tap"), destination: HeroView())
 
 Let's say you have a View Controller named as SuperVillainViewController and want to call from SwiftUI view, to do that ViewController need to implement UIViewControllerRepresentable
 
-```
+``` swift
 struct SuperVillainViewController: UIViewControllerRepresentable {
     var controllers: [UIViewController]
     func makeUIViewcontroller(context: Context)  SuperVillainViewController {
@@ -475,9 +474,9 @@ struct SuperVillainViewController: UIViewControllerRepresentable {
 }
 ```
 Now you can use it like 
-```
+``` swift
 NavigationButton(destination: SuperVillainViewController()) {
-        Text("Click")
+    Text("Click")
 }
 ```
 ### Use UIKit and SwiftUI Views Together
@@ -485,7 +484,7 @@ NavigationButton(destination: SuperVillainViewController()) {
 > To use UIView subclasses from within SwiftUI, you wrap the other view in a SwiftUI view that conforms to the UIViewRepresentable protocol. ([Reference](https://developer.apple.com/tutorials/swiftui/creating-and-combining-views#use-uikit-and-swiftui-views-together))
 
 as example 
-```
+``` swift
 
 import SwiftUI
 import MapKit
