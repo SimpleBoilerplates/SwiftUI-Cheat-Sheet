@@ -7,7 +7,7 @@
 - [SwiftUI Cheat Sheet](#swiftui-cheat-sheet)
     - [Table of Contents](#table-of-contents)
 - [Resource](#resource)
-- [UIKIT equivalent in SwiftUI](#uikit-equivalent-in-swiftui)
+- [UIKit equivalent in SwiftUI](#uikit-equivalent-in-swiftui)
 - [View](#view)
     - [Text](#text)
     - [Image](#image)
@@ -32,7 +32,7 @@
     - [Group](#group)
 - [Alerts and Action Sheets](#alerts-and-action-sheets)
 - [Navigation](#navigation)
-- [Work with UIKIT](#work-with-uikit)
+- [Work with UIKit](#work-with-uikit)
     - [Navigate to ViewController](#navigate-to-viewcontroller)
     - [Use UIKit and SwiftUI Views Together](#use-uikit-and-swiftui-views-together)
 
@@ -45,8 +45,8 @@
 - [About SwiftUI](https://github.com/Juanpe/About-SwiftUI)
 
 
-# UIKIT equivalent in SwiftUI
-| UIKIT | [SwiftUI](https://developer.apple.com/xcode/swiftui/) |
+# UIKit equivalent in SwiftUI
+| UIKit | [SwiftUI](https://developer.apple.com/xcode/swiftui/) |
 | ----------- | ----------- |
 | UILabel | [Text](#text) |
 | UIImageView | [Image](#image) |
