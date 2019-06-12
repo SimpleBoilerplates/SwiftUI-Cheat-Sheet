@@ -468,11 +468,11 @@ Let's say you have a View Controller named as SuperVillainViewController and wan
 ``` swift
 struct SuperVillainViewController: UIViewControllerRepresentable {
     var controllers: [UIViewController]
-    func makeUIViewcontroller(context: Context)  SuperVillainViewController {
-	    // you could have a custom constructor here, I'm just keeping it simple
-		let vc = SuperVillainViewController()
-		return vc
-	}
+    func makeUIViewcontroller(context: Context) -> SuperVillainViewController {
+        // you could have a custom constructor here, I'm just keeping it simple
+        let vc = SuperVillainViewController()
+        return vc
+    }
 }
 ```
 Now you can use it like 
