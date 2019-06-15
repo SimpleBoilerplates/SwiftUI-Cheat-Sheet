@@ -24,6 +24,7 @@
     - [Slider](#slider)
     - [Date Picker](#date-picker)
     - [Segmented Control](#segmented-control)
+    - [Stepper](#stepper)
     - [Tap](#tap)
     - [Gesture](#gesture)
 - [List](#list)
@@ -63,7 +64,7 @@
 | UIStackView with horizontal axis| [HStack](#hstack) |
 | UIStackView with vertical axis| [VStack](#vstack) |
 | UISegmentedControl | [SegmentedControl](#segmented-control) |
-| UIStepper | Stepper |
+| UIStepper | [Stepper](#stepper) |
 | UIDatePicker | [DatePicker](#date-picker) |
 | NSAttributedString | No equivalent (use [Text](#text)) |
 
@@ -280,6 +281,30 @@ SegmentedControl(selection: $favoriteColor) {
     ForEach(0..<colors.count) { index in
         Text(self.colors[index]).tag(index)
     }
+}
+```
+
+### Stepper
+
+``` swift
+@State var count:Int = 0
+
+Stepper(onIncrement: {
+self.count += 1
+}, onDecrement: {
+self.count -= 1
+}, label: {
+Text("Count is \(count)")
+})
+```
+
+or
+
+``` swift
+@State var count:Int = 0
+
+Stepper(value: $count, in: 1...10 ) {
+Text("Count is \(count)")
 }
 ```
 
