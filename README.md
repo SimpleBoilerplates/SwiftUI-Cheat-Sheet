@@ -290,11 +290,11 @@ SegmentedControl(selection: $favoriteColor) {
 @State var count:Int = 0
 
 Stepper(onIncrement: {
-self.count += 1
+    self.count += 1
 }, onDecrement: {
-self.count -= 1
+    self.count -= 1
 }, label: {
-Text("Count is \(count)")
+    Text("Count is \(count)")
 })
 ```
 
