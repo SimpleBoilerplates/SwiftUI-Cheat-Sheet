@@ -226,7 +226,8 @@ Text("Hello World")
     .background(
         Image("hello_world")
             .resizable()
-            .frame(width: 100, height: 100))
+            .frame(width: 100, height: 100)
+    )
 ```
 
 <details><summary>Screenshot</summary>
@@ -240,7 +241,14 @@ Text("Hello World")
 Gradient background
 ``` swift
 Text("Hello World")
-    .background(LinearGradient(gradient: Gradient(colors: [.white, .red, .black]), startPoint: .leading, endPoint: .trailing), cornerRadius: 0)
+    .background(
+        LinearGradient(
+            gradient: Gradient(colors: [.white, .red, .black]), 
+            startPoint: .leading, 
+            endPoint: .trailing
+        ),
+        cornerRadius: 0
+    )
 ```
 
 <details><summary>Screenshot</summary>
@@ -270,7 +278,7 @@ VStack {
 
 Styling
 ``` swift
-VStack (alignment: .leading, spacing: 20){
+VStack(alignment: .leading, spacing: 20) {
     Text("Hello")
     Divider()
     Text("World")
@@ -347,11 +355,12 @@ Toggle(isOn: $isShowing) {
 ### Button
 To create button
 ``` swift
-Button(action: {
-    // do something
-}) {
-    Text("Click Me")
-}
+Button(
+    action: {
+        // do something
+    },
+    label: { Text("Click Me") }
+)
 ```
 
 <details><summary>Screenshot</summary>
@@ -364,11 +373,12 @@ Button(action: {
 
 To create image Button
 ``` swift
-Button(action: {
-    // do something
-}) {
-    Image("hello_world")
-}
+Button(
+    action: {
+        // do something
+    },
+    label: { Image("hello_world") }
+)
 ```
 
 <details><summary>Screenshot</summary>
@@ -386,7 +396,7 @@ It heavily relies in state, simply create a state and pass it as it will bind to
 @State var fullName: String = "Joe" //create State
 
 TextField($fullName) // passing it to bind
-    .textFieldStyle(.roundedBorder) //adds border
+    .textFieldStyle(.roundedBorder) // adds border
 
 ```
 
@@ -400,10 +410,10 @@ TextField($fullName) // passing it to bind
 
 To create secure TextField
 ``` swift
-@State var password: String = "" //create State
+@State var password: String = "" // create State
 
 SecureField($password) // passing it to bind
-    .textFieldStyle(.roundedBorder) //adds border
+    .textFieldStyle(.roundedBorder) // adds border
 
 ```
 
@@ -456,8 +466,9 @@ DatePicker(
 var colors = ["Red", "Green", "Blue"]
 
 SegmentedControl(selection: $favoriteColor) {
-    ForEach(0..<colors.count) { index in
-        Text(self.colors[index]).tag(index)
+    ForEach(0 ..< colors.count) { index in
+        Text(self.colors[index])
+            .tag(index)
     }
 }
 ```
@@ -475,13 +486,11 @@ SegmentedControl(selection: $favoriteColor) {
 ``` swift
 @State var count:Int = 0
 
-Stepper(onIncrement: {
-    self.count += 1
-}, onDecrement: {
-    self.count -= 1
-}, label: {
-    Text("Count is \(count)")
-})
+Stepper(
+    onIncrement: { self.count += 1 }, 
+    onDecrement: { self.count -= 1 }, 
+    label: { Text("Count is \(count)") }
+)
 ```
 
 or
@@ -489,8 +498,8 @@ or
 ``` swift
 @State var count:Int = 0
 
-Stepper(value: $count, in: 1...10 ) {
-Text("Count is \(count)")
+Stepper(value: $count, in: 1...10) {
+    Text("Count is \(count)")
 }
 ```
 
@@ -499,15 +508,15 @@ For single tap
 ``` swift
 Text("Tap me!")
     .tapAction {
-       print("Tapped!")
-}
+        print("Tapped!")
+    }
 ```
 For double tap
 ``` swift
 Text("Tap me!")
-    .tapAction (count: 2) {
-       print("Tapped!")
-}
+    .tapAction(count: 2) {
+        print("Tapped!")
+    }
 ```
 
 <details><summary>Screenshot</summary>
@@ -525,25 +534,25 @@ Text("Tap")
     .gesture(
         TapGesture()
             .onEnded { _ in
-                        
+                // do something
             }
-        )
+    )
 
 Text("Drag Me")
     .gesture(
         DragGesture(minimumDistance: 50)
             .onEnded { _ in
-                        
+                // do something
             }
-        )
+    )
 
 Text("Long Press")
-   .gesture(
+    .gesture(
         LongPressGesture(minimumDuration: 2)
             .onEnded { _ in
-                        
+                // do something
             }
-        )
+    )
 ```
 
 # List
@@ -570,7 +579,7 @@ To create dynamic **List**
 ``` swift
 let names = ["Thanos", "Iron man", "Ant man"]
 List(names) { name in
-        Text(name)
+    Text(name)
 }
 ```
 
@@ -644,12 +653,13 @@ Add bar items to **NavigationView**
 NavigationView {
     Text("Hello")
         .navigationBarTitle(Text("World"), displayMode: .inline)
-        .navigationBarItems(trailing:
-                Button(action: {
-                    print("Going to Setting")
-                }) {
-                    Text("Setting")
-                })
+        .navigationBarItems(
+            trailing:
+                Button(
+                    action: { print("Going to Setting") }
+                    label: { Text("Setting") }
+                )
+        )
 }
 ```
 
@@ -693,9 +703,13 @@ Alert(title: Text("Title"), message: Text("message"), dismissButton: .default(Te
 ```
 To Show Action Sheet
 ``` swift
-ActionSheet(title: Text("Title"), message: Text("Message"), buttons: [.default(Text("Ok!"), onTrigger: {
-    print("hello")
-})])
+ActionSheet(
+    title: Text("Title"), 
+    message: Text("Message"), 
+    buttons: [
+        .default(Text("Ok!"), onTrigger: { print("hello") })
+    ]
+)
 ```
 
 # Navigation
@@ -732,13 +746,13 @@ Navigate via **PresentationButton**
 PresentationButton(Text("Tap"), destination: HeroView())
 ```
 
-# Work with UIKIT
+# Work with UIKit
 
 ### Navigate to ViewController
 
->  It's possible to work with UIKIT component from SwiftUI or call SwiftUI view as View Controller from UIKIT. 
+>  It's possible to work with UIKit components from SwiftUI or call SwiftUI views as View Controllers from UIKit. 
 
-Let's say you have a View Controller named as SuperVillainViewController and want to call from SwiftUI view, to do that ViewController need to implement UIViewControllerRepresentable
+Let's say you have a View Controller named SuperVillainViewController and want to call it from a SwiftUI view, to do that ViewController needs to implement UIViewControllerRepresentable:
 
 ``` swift
 struct SuperVillainViewController: UIViewControllerRepresentable {
@@ -773,7 +787,9 @@ struct MapView: UIViewRepresentable {
 
     func updateUIView(_ view: MKMapView, context: Context) {
         let coordinate = CLLocationCoordinate2D(
-            latitude: 34.011286, longitude: -116.166868)
+            latitude: 34.011286, 
+            longitude: -116.166868
+        )
         let span = MKCoordinateSpan(latitudeDelta: 2.0, longitudeDelta: 2.0)
         let region = MKCoordinateRegion(center: coordinate, span: span)
         view.setRegion(region, animated: true)
