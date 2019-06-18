@@ -1,6 +1,6 @@
 # SwiftUI Cheat Sheet
 
-![SwiftUI](https://raw.githubusercontent.com/SimpleBoilerplates/SwiftUI-Cheat-Sheet/master/assets/image.png)
+![SwiftUI](./assets/swift-ui-logo.png)
 
 
 ### Table of Contents
@@ -72,12 +72,21 @@
 
 ### Text
 
-To show a **text** in UI simply write
+To show a **text** in UI simply write:
 ``` swift
 Text("Hello World")
 ```
 
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/view/text/1.png)
+
+</p>
+</details>
+
 To add style
+
 ``` swift
 Text("Hello World")
     .font(.largeTitle)
@@ -86,6 +95,14 @@ Text("Hello World")
     .lineLimit(nil)
     .padding()
 ```
+
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/view/text/2.png)
+
+</p>
+</details>
 
 To format text inside text view
 ``` swift
@@ -101,16 +118,40 @@ var body: some View {
 }
 ```
 
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/view/text/3.png)
+
+</p>
+</details>
+
 ### Image
  To show image
 ``` swift
 Image("hello_world") //image name is hello_world
 ```
 
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/view/image/1.png)
+
+</p>
+</details>
+
 To use system icon
 ``` swift
 Image(systemName: "cloud.heavyrain.fill")
 ```
+
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/view/image/2.png)
+
+</p>
+</details>
 
 you can add style to system icon set
 ``` swift
@@ -119,6 +160,14 @@ Image(systemName: "cloud.heavyrain.fill")
     .font(.largeTitle)
 ```
 
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/view/image/3.png)
+
+</p>
+</details>
+
 Add style to Image
 ``` swift
 Image("hello_world")
@@ -126,6 +175,14 @@ Image("hello_world")
     .aspectRatio(contentMode: .fill)
     .padding(.bottom)
 ```
+
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/view/image/4.png)
+
+</p>
+</details>
 
 ### Shape
 
@@ -136,12 +193,28 @@ Rectangle()
     .frame(width: 200, height: 200)
 ```
 
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/view/shape/1.png)
+
+</p>
+</details>
+
 To create circle
 ``` swift
 Circle()
     .fill(Color.blue)
     .frame(width: 50, height: 50)
 ```
+
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/view/shape/2.png)
+
+</p>
+</details>
 
 # Layout
 
@@ -156,11 +229,27 @@ Text("Hello World")
             .frame(width: 100, height: 100))
 ```
 
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/layout/background/1.png)
+
+</p>
+</details>
+
 Gradient background
 ``` swift
 Text("Hello World")
     .background(LinearGradient(gradient: Gradient(colors: [.white, .red, .black]), startPoint: .leading, endPoint: .trailing), cornerRadius: 0)
 ```
+
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/layout/background/1.png)
+
+</p>
+</details>
 
 ### VStack
 Shows child view vertically
@@ -170,6 +259,15 @@ VStack {
     Text("World")
 }
 ```
+
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/layout/vstack/1.png)
+
+</p>
+</details>
+
 Styling
 ``` swift
 VStack (alignment: .leading, spacing: 20){
@@ -178,6 +276,14 @@ VStack (alignment: .leading, spacing: 20){
     Text("World")
 }
 ```
+
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/layout/vstack/2.png)
+
+</p>
+</details>
 
 ### HStack
 Shows child view horizontally
@@ -188,6 +294,13 @@ HStack {
 }
 ```
 
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/layout/hstack/1.png)
+
+</p>
+</details>
 
 ### ZStack
 
@@ -202,6 +315,14 @@ ZStack() {
 }
 ```
 
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/layout/zstack/1.png)
+
+</p>
+</details>
+
 # Input
 
 ### Toggle
@@ -215,6 +336,14 @@ Toggle(isOn: $isShowing) {
 }.padding()
 ```
 
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/input/toggle/1.png)
+
+</p>
+</details>
+
 ### Button
 To create button
 ``` swift
@@ -224,6 +353,15 @@ Button(action: {
     Text("Click Me")
 }
 ```
+
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/input/button/1.png)
+
+</p>
+</details>
+
 To create image Button
 ``` swift
 Button(action: {
@@ -232,6 +370,14 @@ Button(action: {
     Image("hello_world")
 }
 ```
+
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/input/toggle/2.png)
+
+</p>
+</details>
 
 ### TextField
 
@@ -244,6 +390,14 @@ TextField($fullName) // passing it to bind
 
 ```
 
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/input/textfield/1.png)
+
+</p>
+</details>
+
 To create secure TextField
 ``` swift
 @State var password: String = "" //create State
@@ -253,6 +407,14 @@ SecureField($password) // passing it to bind
 
 ```
 
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/input/textfield/2.png)
+
+</p>
+</details>
+
 ### Slider
 
 ``` swift
@@ -260,6 +422,14 @@ SecureField($password) // passing it to bind
     
 Slider(value: $value, from: -100, through: 100, by: 1)
 ```
+
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/input/slider/1.png)
+
+</p>
+</details>
 
 ### Date Picker
 ``` swift
@@ -270,6 +440,14 @@ DatePicker(
     displayedComponents: .date
 )
 ```
+
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/input/date_picker/1.png)
+
+</p>
+</details>
 
 ### Segmented Control
 
@@ -283,6 +461,14 @@ SegmentedControl(selection: $favoriteColor) {
     }
 }
 ```
+
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/input/segmented_control/1.png)
+
+</p>
+</details>
 
 ### Stepper
 
@@ -324,6 +510,14 @@ Text("Tap me!")
 }
 ```
 
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/input/tap/1.png)
+
+</p>
+</details>
+
 ### Gesture
  Gesture like **TapGesture**, **LongPressGesture**, **DragGesture**
 ``` swift
@@ -364,6 +558,14 @@ List {
 }
 ```
 
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/list/1.png)
+
+</p>
+</details>
+
 To create dynamic **List**
 ``` swift
 let names = ["Thanos", "Iron man", "Ant man"]
@@ -385,6 +587,14 @@ List {
 }
 ```
 
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/list/2.png)
+
+</p>
+</details>
+
 To make it grouped add *.listStyle(.grouped)*
 ``` swift
 List {
@@ -398,6 +608,14 @@ List {
 }.listStyle(.grouped)
 ```
 
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/list/3.png)
+
+</p>
+</details>
+
 # Containers
 
 ### NavigationView
@@ -410,6 +628,14 @@ NavigationView {
         .navigationBarTitle(Text("World"), displayMode: .inline)
 }
 ```
+
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/containers/navigationview/1.png)
+
+</p>
+</details>
 
 For large title use *.large*
 
@@ -427,6 +653,14 @@ NavigationView {
 }
 ```
 
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/containers/navigationview/2.png)
+
+</p>
+</details>
+
 ### Group
 Group creates several views to act as one, also to avoid Stack's 10 View maximum limit.
 ``` swift
@@ -442,6 +676,14 @@ VStack {
     }
 }
 ```
+
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/containers/group/1.png)
+
+</p>
+</details>
 
 # Alerts and Action Sheets
 To Show an Alert
@@ -465,6 +707,14 @@ NavigationView {
     }.navigationBarTitle(Text("First View"))
 }
 ```
+
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/navigation/1.png)
+
+</p>
+</details>
 
 Navigate via tap on List Item
 ``` swift
@@ -536,4 +786,3 @@ struct MapView_Preview: PreviewProvider {
     }
 }
 ```
-
