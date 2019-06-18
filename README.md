@@ -428,7 +428,7 @@ SecureField($password) // passing it to bind
 ### Slider
 
 ``` swift
-@State var value: Double = 0 //create State
+@State var value: Double = 0 // create State
     
 Slider(value: $value, from: -100, through: 100, by: 1)
 ```
@@ -656,7 +656,7 @@ NavigationView {
         .navigationBarItems(
             trailing:
                 Button(
-                    action: { print("Going to Setting") }
+                    action: { print("Going to Setting") },
                     label: { Text("Setting") }
                 )
         )
@@ -698,7 +698,11 @@ VStack {
 # Alerts and Action Sheets
 To Show an Alert
 ``` swift
-Alert(title: Text("Title"), message: Text("message"), dismissButton: .default(Text("Ok!")))
+Alert(
+    title: Text("Title"), 
+    message: Text("message"), 
+    dismissButton: .default(Text("Ok!"))
+)
 
 ```
 To Show Action Sheet
