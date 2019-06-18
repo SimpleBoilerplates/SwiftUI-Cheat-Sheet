@@ -371,13 +371,6 @@ Button(action: {
 }
 ```
 
-<details><summary>Screenshot</summary>
-<p>
-
-![](./assets/images/input/toggle/2.png)
-
-</p>
-</details>
 
 ### TextField
 
