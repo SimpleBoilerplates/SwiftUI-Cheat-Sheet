@@ -52,7 +52,7 @@
 | UILabel | [Text](#text) |
 | UIImageView | [Image](#image) |
 | UITextField | [TextField](#textfield) |
-| UITextView | No equivalent (use [Text](#text)) |
+| UITextView | No equivalent (use [Text](#text)/[TextField](#textfield)) |
 | UISwitch | [Toggle](#toggle) |
 | UISlider | [Slider](#slider) |
 | UIButton | [Button](#button) |
