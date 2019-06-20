@@ -30,6 +30,7 @@
 - [List](#list)
 - [Containers](#containers)
     - [NavigationView](#navigationview)
+    - [TabbedView](#tabbedview)
     - [Group](#group)
 - [Alerts and Action Sheets](#alerts-and-action-sheets)
 - [Navigation](#navigation)
@@ -59,6 +60,7 @@
 | UITableView | [List](#list) |
 | UICollectionView | No equivalent (can be implemented by [List](#list)) |
 | UINavigationController | [NavigationView](#navigationview) |
+| UITabBarController | [TabbedView](#tabbedview) |
 | UIAlertController with style .alert | [Alert](#alerts-and-action-sheets) |
 | UIAlertController with style .actionSheet | [ActionSheet](#alerts-and-action-sheets) |
 | UIStackView with horizontal axis| [HStack](#hstack) |
@@ -660,6 +662,40 @@ NavigationView {
 <p>
 
 ![](./assets/images/containers/navigationview/2.png)
+
+</p>
+</details>
+
+### TabbedView
+
+**TabbedView** creates a container similar to **UITabBarController** with radio-style selection control which determines which `View` is presented.
+
+``` swift
+@State private var selection = 0
+
+TabbedView(selection: $selection) {
+    Text("View A")
+        .font(.title)
+        .tabItemLabel(Text("View A")
+            .font(.caption))
+        .tag(0)
+    Text("View B")
+        .font(.title)
+        .tabItemLabel(Text("View B")
+            .font(.caption))
+        .tag(1)
+    Text("View C")
+        .font(.title)
+        .tabItemLabel(Text("View C")
+            .font(.caption))
+        .tag(2)
+}
+```
+
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/containers/tabbedview/1.png)
 
 </p>
 </details>
