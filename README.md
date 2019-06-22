@@ -256,7 +256,7 @@ Text("Hello World")
 <details><summary>Screenshot</summary>
 <p>
 
-![](./assets/images/layout/background/1.png)
+![](./assets/images/layout/background/2.png)
 
 </p>
 </details>
