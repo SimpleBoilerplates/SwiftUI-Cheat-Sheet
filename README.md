@@ -746,10 +746,10 @@ ActionSheet(
 ```
 
 # Navigation
-Navigate via **NavigationButton**
+Navigate via **NavigationLink**
 ``` swift
 NavigationView {
-    NavigationButton(destination: SecondView()) {
+    NavigationLink(destination: SecondView()) {
         Text("Show")
     }.navigationBarTitle(Text("First View"))
 }
