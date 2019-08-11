@@ -767,7 +767,7 @@ Navigate via tap on List Item
 ``` swift
 let names = ["Thanos", "Iron man", "Ant man"]
 List(names) { name in
-    NavigationButton(destination: HeroView(name: name)) {
+    NavigationLink(destination: HeroView(name: name)) {
         Text(name)
     }
 }
@@ -799,7 +799,7 @@ struct SuperVillainViewController: UIViewControllerRepresentable {
 ```
 Now you can use it like 
 ``` swift
-NavigationButton(destination: SuperVillainViewController()) {
+NavigationLink(destination: SuperVillainViewController()) {
     Text("Click")
 }
 ```
