@@ -599,7 +599,7 @@ List {
 </p>
 </details>
 
-To make it grouped add *.listStyle(.grouped)*
+To make it grouped add *.listStyle(GroupedListStyle())*
 ``` swift
 List {
     Section(header: Text("Good Hero")) {
@@ -609,7 +609,7 @@ List {
     Section(header: Text("Bad Heros")) {
         Text("Iron man")
     }
-}.listStyle(.grouped)
+}.listStyle(GroupedListStyle())
 ```
 
 <details><summary>Screenshot</summary>
