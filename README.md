@@ -599,7 +599,7 @@ List {
 </p>
 </details>
 
-To make it grouped add *.listStyle(.grouped)*
+To make it grouped add *.listStyle(GroupedListStyle())*
 ``` swift
 List {
     Section(header: Text("Good Hero")) {
@@ -609,7 +609,27 @@ List {
     Section(header: Text("Bad Heros")) {
         Text("Iron man")
     }
-}.listStyle(.grouped)
+}.listStyle(GroupedListStyle())
+```
+
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/list/3.png)
+
+</p>
+</details>
+
+To add a footer to a section
+``` swift
+List {
+    Section(header: Text("Good Heros"), footer: Text("Powerful")){
+        Text("Thanos")
+    }
+    Section(header: Text("Bad Heros"), footer: Text("Not as Powerful")){
+        Text("Iron Man")
+    }
+}.listStyle(GroupedListStyle())
 ```
 
 <details><summary>Screenshot</summary>
