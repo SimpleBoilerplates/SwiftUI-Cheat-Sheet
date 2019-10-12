@@ -502,14 +502,14 @@ Stepper(value: $count, in: 1...10) {
 For single tap
 ``` swift
 Text("Tap me!")
-    .tapAction {
+    .onTapGesture {
         print("Tapped!")
     }
 ```
 For double tap
 ``` swift
 Text("Tap me!")
-    .tapAction(count: 2) {
+    .onTapGesture(count: 2) {
         print("Tapped!")
     }
 ```
