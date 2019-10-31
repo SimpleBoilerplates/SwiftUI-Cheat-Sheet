@@ -760,7 +760,7 @@ ActionSheet(
     title: Text("Title"), 
     message: Text("Message"), 
     buttons: [
-        .default(Text("Ok!"), onTrigger: { print("hello") })
+        .default(Text("Ok!"), action: { print("hello") })
     ]
 )
 ```
