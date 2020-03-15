@@ -30,7 +30,7 @@
 - [List](#list)
 - [Containers](#containers)
     - [NavigationView](#navigationview)
-    - [TabbedView](#tabbedview)
+    - [TabView](#tabView)
     - [Group](#group)
 - [Alerts and Action Sheets](#alerts-and-action-sheets)
 - [Navigation](#navigation)
@@ -60,7 +60,7 @@
 | UITableView | [List](#list) |
 | UICollectionView | No equivalent (can be implemented by [List](#list)) |
 | UINavigationController | [NavigationView](#navigationview) |
-| UITabBarController | [TabbedView](#tabbedview) |
+| UITabBarController | [TabView](#tabview) |
 | UIAlertController with style .alert | [Alert](#alerts-and-action-sheets) |
 | UIAlertController with style .actionSheet | [ActionSheet](#alerts-and-action-sheets) |
 | UIStackView with horizontal axis| [HStack](#hstack) |
@@ -686,14 +686,14 @@ NavigationView {
 </p>
 </details>
 
-### TabbedView
+### TabView
 
-**TabbedView** creates a container similar to **UITabBarController** with radio-style selection control which determines which `View` is presented.
+**TabView** creates a container similar to **UITabBarController** with radio-style selection control which determines which `View` is presented.
 
 ``` swift
 @State private var selection = 0
 
-TabbedView(selection: $selection) {
+TabView(selection: $selection) {
     Text("View A")
         .font(.title)
         .tabItemLabel(Text("View A")
@@ -715,7 +715,7 @@ TabbedView(selection: $selection) {
 <details><summary>Screenshot</summary>
 <p>
 
-![](./assets/images/containers/tabbedview/1.png)
+![](./assets/images/containers/tabview/1.png)
 
 </p>
 </details>
