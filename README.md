@@ -794,12 +794,6 @@ List(names) { name in
 }
 ```
 
-Navigate via **PresentationButton**
-
-``` swift
-PresentationButton(Text("Tap"), destination: HeroView())
-```
-
 # Work with UIKit
 
 ### Navigate to ViewController
