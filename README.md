@@ -23,7 +23,7 @@
     - [TextField](#textfield)
     - [Slider](#slider)
     - [Date Picker](#date-picker)
-    - [Segmented Control](#segmented-control)
+    - [Picker](#picker)
     - [Stepper](#stepper)
     - [Tap](#tap)
     - [Gesture](#gesture)
@@ -65,7 +65,7 @@
 | UIAlertController with style .actionSheet | [ActionSheet](#alerts-and-action-sheets) |
 | UIStackView with horizontal axis| [HStack](#hstack) |
 | UIStackView with vertical axis| [VStack](#vstack) |
-| UISegmentedControl | [SegmentedControl](#segmented-control) |
+| UISegmentedControl | [Picker](#picker) |
 | UIStepper | [Stepper](#stepper) |
 | UIDatePicker | [DatePicker](#date-picker) |
 | NSAttributedString | No equivalent (use [Text](#text)) |
@@ -454,24 +454,25 @@ DatePicker(
 </p>
 </details>
 
-### Segmented Control
+### Picker
 
 ``` swift
 @State var favoriteColor = 0
 var colors = ["Red", "Green", "Blue"]
 
-SegmentedControl(selection: $favoriteColor) {
+Picker("Favorite Color", selection: $favoriteColor) {
     ForEach(0 ..< colors.count) { index in
         Text(self.colors[index])
             .tag(index)
     }
 }
+.pickerStyle(SegmentedPickerStyle())
 ```
 
 <details><summary>Screenshot</summary>
 <p>
 
-![](./assets/images/input/segmented_control/1.png)
+![](./assets/images/input/picker/1.png)
 
 </p>
 </details>
