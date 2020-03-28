@@ -23,14 +23,14 @@
     - [TextField](#textfield)
     - [Slider](#slider)
     - [Date Picker](#date-picker)
-    - [Segmented Control](#segmented-control)
+    - [Picker](#picker)
     - [Stepper](#stepper)
     - [Tap](#tap)
     - [Gesture](#gesture)
 - [List](#list)
 - [Containers](#containers)
     - [NavigationView](#navigationview)
-    - [TabbedView](#tabbedview)
+    - [TabView](#tabView)
     - [Group](#group)
 - [Alerts and Action Sheets](#alerts-and-action-sheets)
 - [Navigation](#navigation)
@@ -60,12 +60,12 @@
 | UITableView | [List](#list) |
 | UICollectionView | No equivalent (can be implemented by [List](#list)) |
 | UINavigationController | [NavigationView](#navigationview) |
-| UITabBarController | [TabbedView](#tabbedview) |
+| UITabBarController | [TabView](#tabview) |
 | UIAlertController with style .alert | [Alert](#alerts-and-action-sheets) |
 | UIAlertController with style .actionSheet | [ActionSheet](#alerts-and-action-sheets) |
 | UIStackView with horizontal axis| [HStack](#hstack) |
 | UIStackView with vertical axis| [VStack](#vstack) |
-| UISegmentedControl | [SegmentedControl](#segmented-control) |
+| UISegmentedControl | [Picker](#picker) |
 | UIStepper | [Stepper](#stepper) |
 | UIDatePicker | [DatePicker](#date-picker) |
 | NSAttributedString | No equivalent (use [Text](#text)) |
@@ -454,24 +454,25 @@ DatePicker(
 </p>
 </details>
 
-### Segmented Control
+### Picker
 
 ``` swift
 @State var favoriteColor = 0
 var colors = ["Red", "Green", "Blue"]
 
-SegmentedControl(selection: $favoriteColor) {
+Picker("Favorite Color", selection: $favoriteColor) {
     ForEach(0 ..< colors.count) { index in
         Text(self.colors[index])
             .tag(index)
     }
 }
+.pickerStyle(SegmentedPickerStyle())
 ```
 
 <details><summary>Screenshot</summary>
 <p>
 
-![](./assets/images/input/segmented_control/1.png)
+![](./assets/images/input/picker/1.png)
 
 </p>
 </details>
@@ -686,14 +687,14 @@ NavigationView {
 </p>
 </details>
 
-### TabbedView
+### TabView
 
-**TabbedView** creates a container similar to **UITabBarController** with radio-style selection control which determines which `View` is presented.
+**TabView** creates a container similar to **UITabBarController** with radio-style selection control which determines which `View` is presented.
 
 ``` swift
 @State private var selection = 0
 
-TabbedView(selection: $selection) {
+TabView(selection: $selection) {
     Text("View A")
         .font(.title)
         .tabItemLabel(Text("View A")
@@ -715,7 +716,7 @@ TabbedView(selection: $selection) {
 <details><summary>Screenshot</summary>
 <p>
 
-![](./assets/images/containers/tabbedview/1.png)
+![](./assets/images/containers/tabview/1.png)
 
 </p>
 </details>
@@ -791,12 +792,6 @@ List(names) { name in
         Text(name)
     }
 }
-```
-
-Navigate via **PresentationButton**
-
-``` swift
-PresentationButton(Text("Tap"), destination: HeroView())
 ```
 
 # Work with UIKit
