@@ -498,6 +498,15 @@ Stepper(value: $count, in: 1...10) {
     Text("Count is \(count)")
 }
 ```
+or
+
+``` swift
+@State private var temperature = 0.0
+
+Stepper(value: $temperature, in: 0...100.0, step: 0.5) {
+                Text("Temperature is \(temperature, specifier:"%g")")
+            }
+```
 
 ### Tap
 For single tap
