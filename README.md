@@ -10,13 +10,20 @@
 - [UIKit equivalent in SwiftUI](#uikit-equivalent-in-swiftui)
 - [View](#view)
     - [Text](#text)
+    - [Label](#label)
+    - [TextEditor](#texteditor)
     - [Image](#image)
     - [Shape](#shape)
+    - [ProgressView](#progressview)
+    - [Map](#map)
 - [Layout](#layout)
     - [Background](#background)
     - [VStack](#vstack)
     - [HStack](#hstack)
     - [ZStack](#zstack)
+    - [LazyVStack](#lazyvstack)
+    - [LazyHStack](#lazyhstack)
+    - [LazyVGrid](#lazyvgrid)
 - [Input](#input)
     - [Toggle](#toggle)
     - [Button](#button)
@@ -27,6 +34,7 @@
     - [Stepper](#stepper)
     - [Tap](#tap)
     - [Gesture](#gesture)
+    - [OnChange](#onChange)
 - [List](#list)
 - [Containers](#containers)
     - [NavigationView](#navigationview)
@@ -107,6 +115,7 @@ Text("Hello World")
 </details>
 
 To format text inside text view
+
 ``` swift
 static let dateFormatter: DateFormatter = {
     let formatter = DateFormatter()
@@ -128,8 +137,41 @@ var body: some View {
 </p>
 </details>
 
+### Label
+Labels are a much-needed addition in the latest SwiftUI iteration. They let you set icons alongside text with the following line of code.
+
+``` swift
+Label("SwiftUI CheatSheet 2.0", systemImage: "up.icloud")
+```
+
+It's possible to set URL, upon clicking which will redirect to browser.
+
+``` swift
+Link("Click me",destination: URL(string: "your_url")!)
+```
+
+### TextEditor
+Multi-line scrollable UITextViews natively in SwiftUI
+
+``` swift
+TextEditor(text: $currentText)
+                .onChange(of: clearText) { value in
+                    if clearText{
+                        currentText = ""
+                    }
+                }
+```
+
+### Map
+MapKIT natively in SwiftUI
+
+``` swift
+Map(mapRect:interactionModes:showsUserLocation: userTrackingMode:
+```
+
 ### Image
  To show image
+ 
 ``` swift
 Image("hello_world") //image name is hello_world
 ```
@@ -156,6 +198,7 @@ Image(systemName: "cloud.heavyrain.fill")
 </details>
 
 you can add style to system icon set
+
 ``` swift
 Image(systemName: "cloud.heavyrain.fill")
     .foregroundColor(.red)
@@ -171,6 +214,7 @@ Image(systemName: "cloud.heavyrain.fill")
 </details>
 
 Add style to Image
+
 ``` swift
 Image("hello_world")
     .resizable() //it will sized so that it fills all the available space
@@ -189,6 +233,7 @@ Image("hello_world")
 ### Shape
 
 To create Rectangle
+
 ``` swift
 Rectangle()
     .fill(Color.red)
@@ -204,6 +249,7 @@ Rectangle()
 </details>
 
 To create circle
+
 ``` swift
 Circle()
     .fill(Color.blue)
@@ -218,10 +264,18 @@ Circle()
 </p>
 </details>
 
+### ProgressView
+
+To create Rectangle
+``` swift
+ProgressView("Text", value: 10, total: 100)
+```
+
 # Layout
 
 ### Background
 To use image as a background
+
 ``` swift
 Text("Hello World")
     .font(.largeTitle)
@@ -241,6 +295,7 @@ Text("Hello World")
 </details>
 
 Gradient background
+
 ``` swift
 Text("Hello World")
     .background(
@@ -263,6 +318,7 @@ Text("Hello World")
 
 ### VStack
 Shows child view vertically
+
 ``` swift
 VStack {
     Text("Hello")
@@ -279,6 +335,7 @@ VStack {
 </details>
 
 Styling
+
 ``` swift
 VStack(alignment: .leading, spacing: 20) {
     Text("Hello")
@@ -297,6 +354,7 @@ VStack(alignment: .leading, spacing: 20) {
 
 ### HStack
 Shows child view horizontally
+
 ``` swift
 HStack {
     Text("Hello")
@@ -315,6 +373,7 @@ HStack {
 ### ZStack
 
 To create overlapping content use ZStack
+
 ``` swift
 ZStack() {
     Image("hello_world")
@@ -333,11 +392,106 @@ ZStack() {
 </p>
 </details>
 
+### LazyVStack
+
+It loads content as and when it’s needed thus improving performance
+
+``` swift
+  ScrollView(.horizontal) {
+           LazyVStack(spacing: 10) {
+                ForEach(0..<1000) { index in
+                    Text("\(index)")
+                            .frame(width: 100, height: 200)
+                            .border(Color.gray.opacity(0.5), width: 0.5)
+                            .background(Color.blue)
+                            .cornerRadius(6)
+                }
+            }
+            .padding(.leading, 10)
+        }
+```
+
+### LazyHStack
+
+It loads content as and when it’s needed thus improving performance
+
+``` swift
+  ScrollView(.horizontal) {
+            LazyHStack(spacing: 10) {
+                ForEach(0..<1000) { index in
+                    Text("\(index)")
+                            .frame(width: 100, height: 200)
+                            .border(Color.gray.opacity(0.5), width: 0.5)
+                            .background(Color.blue)
+                            .cornerRadius(6)
+                }
+            }
+            .padding(.leading, 10)
+        }
+```
+
+### LazyVGrid
+A containers for grid-based layouts that let you set child views vertically in LazyVGrid. Each element of a SwiftUI grid is a GridItem. We can set the alignments, spacing, and size of the GridItem
+
+
+``` swift
+	struct ContentView: View {
+    
+    let colors: [Color] = [.red, .green, .yellow, .blue]
+    
+    var columns: [GridItem] =
+        Array(repeating: .init(.flexible(), alignment: .center), count: 3)
+    
+    var body: some View {
+        ScrollView {
+            LazyVGrid(columns: columns, spacing: 10) {
+                ForEach(0...100, id: \.self) { index in
+                    Text("Tab \(index)")
+                        .frame(width: 110, height: 200)
+                        .background(colors[index % colors.count])
+                    .cornerRadius(8)
+                }
+            }
+        }
+    }
+}
+
+```
+
+### LazyHGrid
+A containers for grid-based layouts that let you set child views horizontally in LazyHGrid
+
+
+``` swift
+	struct ContentView: View {
+    
+    let colors: [Color] = [.red, .green, .yellow, .blue]
+    
+    var columns: [GridItem] =
+        Array(repeating: .init(.flexible(), alignment: .center), count: 3)
+    
+    var body: some View {
+        ScrollView {
+            LazyHGrid(columns: columns, spacing: 10) {
+                ForEach(0...100, id: \.self) { index in
+                    Text("Tab \(index)")
+                        .frame(width: 110, height: 200)
+                        .background(colors[index % colors.count])
+                    .cornerRadius(8)
+                }
+            }
+        }
+    }
+}
+
+```
+
 # Input
 
 ### Toggle
 
 Toggle lets users move between true and false states
+
 ``` swift
 @State var isShowing = true //state
 
@@ -356,6 +510,7 @@ Toggle(isOn: $isShowing) {
 
 ### Button
 To create button
+
 ``` swift
 Button(
     action: {
@@ -374,6 +529,7 @@ Button(
 </details>
 
 To create image Button
+
 ``` swift
 Button(
     action: {
@@ -387,6 +543,7 @@ Button(
 ### TextField
 
 It heavily relies in state, simply create a state and pass it as it will bind to it
+
 ``` swift
 @State var fullName: String = "Joe" //create State
 
@@ -404,6 +561,7 @@ TextField($fullName) // passing it to bind
 </details>
 
 To create secure TextField
+
 ``` swift
 @State var password: String = "" // create State
 
@@ -437,6 +595,7 @@ Slider(value: $value, from: -100, through: 100, by: 1)
 </details>
 
 ### Date Picker
+
 ``` swift
 @State var selectedDate = Date()
 DatePicker(
@@ -510,6 +669,7 @@ Stepper(value: $temperature, in: 0...100.0, step: 0.5) {
 
 ### Tap
 For single tap
+
 ``` swift
 Text("Tap me!")
     .onTapGesture {
@@ -517,6 +677,7 @@ Text("Tap me!")
     }
 ```
 For double tap
+
 ``` swift
 Text("Tap me!")
     .onTapGesture(count: 2) {
@@ -534,6 +695,7 @@ Text("Tap me!")
 
 ### Gesture
  Gesture like **TapGesture**, **LongPressGesture**, **DragGesture**
+
 ``` swift
 Text("Tap")
     .gesture(
@@ -558,6 +720,21 @@ Text("Long Press")
                 // do something
             }
     )
+```
+
+### OnChange
+
+onChange is a new view modifier that’s available across all SwiftUI views. It lets you listen to state changes and perform actions on a view accordingly.
+
+``` swift
+
+ TextEditor(text: $currentText)
+                .onChange(of: clearText) { value in
+                    if clearText{
+                        currentText = ""
+                    }
+                }
+
 ```
 
 # List
@@ -589,6 +766,7 @@ List(names) { name in
 ```
 
 To add section
+
 ``` swift
 List {
     Section(header: Text("Good Hero")) {
@@ -610,6 +788,7 @@ List {
 </details>
 
 To make it grouped add *.listStyle(GroupedListStyle())*
+
 ``` swift
 List {
     Section(header: Text("Good Hero")) {
@@ -631,6 +810,7 @@ List {
 </details>
 
 To add a footer to a section
+
 ``` swift
 List {
     Section(header: Text("Good Heros"), footer: Text("Powerful")){
@@ -674,6 +854,7 @@ NavigationView {
 For large title use *.large*
 
 Add bar items to **NavigationView**
+
 ``` swift
 NavigationView {
     Text("Hello")
@@ -732,6 +913,7 @@ TabView(selection: $selection) {
 
 ### Group
 Group creates several views to act as one, also to avoid Stack's 10 View maximum limit.
+
 ``` swift
 VStack {
     Group {
@@ -756,6 +938,7 @@ VStack {
 
 # Alerts and Action Sheets
 To Show an Alert
+
 ``` swift
 Alert(
     title: Text("Title"), 
@@ -765,6 +948,7 @@ Alert(
 
 ```
 To Show Action Sheet
+
 ``` swift
 ActionSheet(
     title: Text("Title"), 
@@ -777,6 +961,7 @@ ActionSheet(
 
 # Navigation
 Navigate via **NavigationLink**
+
 ``` swift
 NavigationView {
     NavigationLink(destination: SecondView()) {
@@ -794,6 +979,7 @@ NavigationView {
 </details>
 
 Navigate via tap on List Item
+
 ``` swift
 let names = ["Thanos", "Iron man", "Ant man"]
 List(names) { name in
@@ -822,6 +1008,7 @@ struct SuperVillainViewController: UIViewControllerRepresentable {
 }
 ```
 Now you can use it like 
+
 ``` swift
 NavigationLink(destination: SuperVillainViewController()) {
     Text("Click")
@@ -832,6 +1019,7 @@ NavigationLink(destination: SuperVillainViewController()) {
 > To use UIView subclasses from within SwiftUI, you wrap the other view in a SwiftUI view that conforms to the UIViewRepresentable protocol. ([Reference](https://developer.apple.com/tutorials/swiftui/creating-and-combining-views#use-uikit-and-swiftui-views-together))
 
 as example 
+
 ``` swift
 
 import SwiftUI
