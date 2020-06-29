@@ -1,4 +1,4 @@
-# SwiftUI Cheat Sheet
+# SwiftUI 2.0 Cheat Sheet
 
 ![SwiftUI](./assets/swift-ui-logo.png)
 
