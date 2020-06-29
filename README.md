@@ -161,7 +161,7 @@ Multi-line scrollable UITextViews natively in SwiftUI
 ``` swift
 TextEditor(text: $currentText)
                 .onChange(of: clearText) { value in
-                    if clearText{
+                    if clearText {
                         currentText = ""
                     }
                 }
