@@ -78,7 +78,7 @@
 | UIStepper | [Stepper](#stepper) |
 | UIDatePicker | [DatePicker](#date-picker) |
 | NSAttributedString | No equivalent (use [Text](#text)) |
-| MapKIT | [Map](#map) |
+| MapKit | [Map](#map) |
 | UIProgressView | [ProgressView](#progressview) |
 
 
@@ -168,7 +168,7 @@ TextEditor(text: $currentText)
 ```
 
 ### Map
-MapKIT natively in SwiftUI
+MapKit natively in SwiftUI
 
 ``` swift
 Map(mapRect:interactionModes:showsUserLocation: userTrackingMode:
@@ -271,7 +271,7 @@ Circle()
 
 ### ProgressView
 
-To create Rectangle
+To show a ProgressView
 ``` swift
 ProgressView("Text", value: 10, total: 100)
 ```
