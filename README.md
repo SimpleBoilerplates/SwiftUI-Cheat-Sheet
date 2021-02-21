@@ -402,11 +402,11 @@ ZStack() {
 It loads content as and when it’s needed thus improving performance
 
 ``` swift
-  ScrollView(.horizontal) {
+  ScrollView(.vertical) {
            LazyVStack(spacing: 10) {
                 ForEach(0..<1000) { index in
                     Text("\(index)")
-                            .frame(width: 100, height: 200)
+                            .frame(width: 200, height: 100)
                             .border(Color.gray.opacity(0.5), width: 0.5)
                             .background(Color.blue)
                             .cornerRadius(6)
