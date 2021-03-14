@@ -440,7 +440,7 @@ A containers for grid-based layouts that let you set child views vertically in L
 
 
 ``` swift
-	struct ContentView: View {
+struct ContentView: View {
     
     let colors: [Color] = [.red, .green, .yellow, .blue]
     
@@ -468,7 +468,7 @@ A containers for grid-based layouts that let you set child views horizontally in
 
 
 ``` swift
-	struct ContentView: View {
+struct ContentView: View {
     
     let colors: [Color] = [.red, .green, .yellow, .blue]
     
