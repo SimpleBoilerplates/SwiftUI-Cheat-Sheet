@@ -765,7 +765,7 @@ List {
 To create dynamic **List**
 ``` swift
 let names = ["Thanos", "Iron man", "Ant man"]
-List(names) { name in
+List(names, id: \.self) { name in
     Text(name)
 }
 ```
@@ -987,7 +987,7 @@ Navigate via tap on List Item
 
 ``` swift
 let names = ["Thanos", "Iron man", "Ant man"]
-List(names) { name in
+List(names, id: \.self) { name in
     NavigationLink(destination: HeroView(name: name)) {
         Text(name)
     }
