@@ -544,6 +544,13 @@ Button(
 )
 ```
 
+<details><summary>Screenshot</summary>
+<p>
+
+![](./assets/images/input/button/2.png)
+
+</p>
+</details>
 
 ### TextField
 
